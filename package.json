@@ -7,7 +7,9 @@
   "license": "MIT",
   "author": "Matt McElwee <mubatt@wyopub.com>",
   "main": "src/index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node src/index.js"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -42,6 +44,15 @@
     "prettier": "^2.1.1"
   },
   "dependencies": {
-    "dotenv": "^8.2.0"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dot-prop": "^5.2.0",
+    "dotenv": "^8.2.0",
+    "front-matter": "^4.0.2",
+    "graphql": "^15.3.0",
+    "graphql-request": "^3.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mannish": "^4.0.1",
+    "polka": "^0.5.2"
   }
 }
