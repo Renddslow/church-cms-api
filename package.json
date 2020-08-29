@@ -1,0 +1,37 @@
+{
+	"name": "church-cms-api",
+	"version": "0.1.0",
+	"private": false,
+	"description": "An api/identity server for Church CMS",
+	"repository": "https://github.com/Renddslow/church-cms-api",
+	"license": "MIT",
+	"author": "Matt McElwee <mubatt@wyopub.com>",
+	"main": "src/index.js",
+	"scripts": {},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.{js,css,json,md,ts,tsx}": [
+			"prettier --write"
+		]
+	},
+	"prettier": "@dmsi/prettier-config",
+	"ava": {
+		"babel": false,
+		"compileEnhancements": false,
+		"concurrency": 4,
+		"extensions": [
+			"ts"
+		],
+		"files": [
+			"src/**/*.test.ts"
+		],
+		"require": [
+			"ts-node/register"
+		],
+		"timeout": "1m"
+	}
+}
