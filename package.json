@@ -1,37 +1,44 @@
 {
-	"name": "church-cms-api",
-	"version": "0.1.0",
-	"private": false,
-	"description": "An api/identity server for Church CMS",
-	"repository": "https://github.com/Renddslow/church-cms-api",
-	"license": "MIT",
-	"author": "Matt McElwee <mubatt@wyopub.com>",
-	"main": "src/index.js",
-	"scripts": {},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
-	"lint-staged": {
-		"*.{js,css,json,md,ts,tsx}": [
-			"prettier --write"
-		]
-	},
-	"prettier": "@dmsi/prettier-config",
-	"ava": {
-		"babel": false,
-		"compileEnhancements": false,
-		"concurrency": 4,
-		"extensions": [
-			"ts"
-		],
-		"files": [
-			"src/**/*.test.ts"
-		],
-		"require": [
-			"ts-node/register"
-		],
-		"timeout": "1m"
-	}
+  "name": "church-cms-api",
+  "version": "0.1.0",
+  "private": false,
+  "description": "An api/identity server for Church CMS",
+  "repository": "https://github.com/Renddslow/church-cms-api",
+  "license": "MIT",
+  "author": "Matt McElwee <mubatt@wyopub.com>",
+  "main": "src/index.js",
+  "scripts": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md,ts,tsx}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": "@dmsi/prettier-config",
+  "ava": {
+    "babel": false,
+    "compileEnhancements": false,
+    "concurrency": 4,
+    "extensions": [
+      "ts"
+    ],
+    "files": [
+      "src/**/*.test.ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "timeout": "1m"
+  },
+  "devDependencies": {
+    "@dmsi/prettier-config": "^1.3.0",
+    "ava": "^3.12.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.13",
+    "prettier": "^2.1.1"
+  }
 }
