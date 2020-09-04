@@ -44,7 +44,9 @@
     "prettier": "^2.1.1"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.2.5",
     "body-parser": "^1.19.0",
+    "catchify": "^2.6.1",
     "cors": "^2.8.5",
     "dot-prop": "^5.2.0",
     "dotenv": "^8.2.0",
@@ -52,7 +54,9 @@
     "graphql": "^15.3.0",
     "graphql-request": "^3.0.0",
     "jsonwebtoken": "^8.5.1",
+    "mandrill-api": "^1.0.45",
     "mannish": "^4.0.1",
-    "polka": "^0.5.2"
+    "polka": "^0.5.2",
+    "yaml": "^1.10.0"
   }
 }
