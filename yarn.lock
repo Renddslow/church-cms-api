@@ -774,7 +774,7 @@ dir-glob@^3.0.1:
   dependencies:
     path-type "^4.0.0"
 
-dot-prop@^5.2.0:
+dot-prop@^5.0.0, dot-prop@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-5.2.0.tgz#c34ecc29556dc45f1f4c22697b6f4904e0cc4fcb"
   integrity sha512-uEUyaDKoSQ1M4Oq8l45hSE26SnTxL6snNnqvK/VWx5wJhmff5z0FUVJDKDanor/6w3kzE3i7XZOk+7wC0EXr1A==
@@ -2194,6 +2194,14 @@ slice-ansi@^4.0.0:
     ansi-styles "^4.0.0"
     astral-regex "^2.0.0"
     is-fullwidth-code-point "^3.0.0"
+
+sort-on@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/sort-on/-/sort-on-4.1.0.tgz#939e671a35eddcf8b6c64fc3cbbdf2119f8e23f6"
+  integrity sha512-HStto6jwVlc3PL/cJplRMS1jiAwoqkH+BD375uDZU5hyYne5G2wlj7d1ggPVm0SVu7B6MxCjMQFlzDlzqmBOWg==
+  dependencies:
+    arrify "^2.0.1"
+    dot-prop "^5.0.0"
 
 source-map-support@^0.5.19:
   version "0.5.19"

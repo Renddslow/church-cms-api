@@ -1,7 +1,11 @@
 const { get } = require('dot-prop');
 const { gql } = require('graphql-request');
+const sort = require('sort-on');
+
+const MULTIPLIER = 24;
 
 module.exports = (mediator) => async (req, res) => {
+  const { orderBy, page = 1 } = req.query;
   const expression = `master:content/${req.params.contentType}`;
 
   const query = gql`
@@ -26,12 +30,22 @@ module.exports = (mediator) => async (req, res) => {
   const data = await mediator.call('graphql', query);
   const { entries } = get(data, 'repository.object', []);
 
-  res.json(
+  const offset = (page - 1) * MULTIPLIER;
+  const limit = offset + MULTIPLIER;
+
+  const pages = sort(
     entries
       .map((entry) => ({
         permalink: get(entry, 'name', ''),
         ...mediator.call('getContent', get(entry, 'object.text', '')),
       }))
       .filter(({ permalink }) => permalink !== '_index.md'),
+    orderBy || 'title',
   );
+  const pageCount = Math.ceil(pages.length / MULTIPLIER);
+
+  res.json({
+    pages: pages.slice(offset, limit),
+    pageCount,
+  });
 };
