@@ -14,6 +14,7 @@ require('./utils/getContent')();
 const auth = require('./controllers/auth');
 const createToken = require('./controllers/token');
 const getFile = require('./controllers/getFile');
+const getOptions = require('./controllers/getOptions');
 const listFiles = require('./controllers/listFiles');
 const listPages = require('./controllers/listPages');
 const me = require('./controllers/me');
@@ -47,5 +48,6 @@ polka()
   .get('/me', auth(mediator), me())
   .get('/lists/pages', auth(mediator), listPages(mediator))
   .get('/lists/:contentType', auth(mediator), listFiles(mediator))
-  .get('/files/:parent?/:permalink', auth(mediator), getFile(mediator))
+  .get('/files/:permalink/:child?', auth(mediator), getFile(mediator))
+  .get('/options/:permalink/:child?', auth(mediator), getOptions(mediator))
   .listen(PORT, () => console.log(`💒 Running Church CMS on port ${PORT}`));

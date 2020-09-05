@@ -2,9 +2,10 @@ const { get } = require('dot-prop');
 const { gql } = require('graphql-request');
 
 module.exports = (mediator) => async (req, res) => {
-  const fullPermalink = req.params.parent
-    ? `${req.params.parent}/${req.params.permalink}`
+  const fullPermalink = req.params.child
+    ? `${req.params.permalink}/${req.params.child}`
     : req.params.permalink;
+
   const permalink = fullPermalink.includes('.md') ? fullPermalink : `${fullPermalink}.md`;
   const expression = `master:content/${permalink}`;
   const query = gql`
